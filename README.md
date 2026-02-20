@@ -26,15 +26,11 @@ The server will start at `http://127.0.0.1:8000`.
 
 ### Get Analytics
 
-Open your browser or use curl:
-
-```bash
-curl http://127.0.0.1:8000/analytics
-```
+Open your browser at `http://127.0.0.1:8000`, upload your CSV file, and click **Analyze**.
 
 ## Example Output
 
-Generated from `allsome_interview_test_orders.csv`:
+Generated from `allsome_interview_test_orders(1).csv`:
 
 ```json
 {
@@ -48,7 +44,8 @@ Generated from `allsome_interview_test_orders.csv`:
 
 ## How It Works
 
-1. Loads `allsome_interview_test_orders.csv` using Python's built-in `csv` module.
-2. Calculates **total revenue** by summing `quantity × price` for each order.
-3. Finds the **best-selling SKU** by summing quantities per SKU and selecting the highest.
-4. Returns results as JSON via the `/analytics` endpoint.
+1. Visit `/` to see the upload page.
+2. Upload a CSV file with columns: `order_id`, `sku`, `quantity`, `price`.
+3. The app calculates **total revenue** by summing `quantity × price` for each order.
+4. Finds the **best-selling SKU** by summing quantities per SKU and selecting the highest.
+5. Returns results as JSON on the page.

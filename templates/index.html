@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Analytics</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Analytics</h1>
+        <p class="subtitle">Upload your orders CSV to generate insights and visualizations.</p>
+
+        <form id="uploadForm">
+            <div class="upload-area" id="dropZone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+                     viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                </svg>
+                <p>Drag & drop your CSV file here, or click to browse</p>
+                <input type="file" id="csvFile" accept=".csv" hidden>
+                <div class="filename" id="fileName"></div>
+            </div>
+            <div style="text-align:center;">
+                <button type="submit" class="btn" id="analyzeBtn" disabled>Analyze Orders</button>
+            </div>
+        </form>
+
+        <div id="results">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-label">Total Revenue</div>
+                    <div class="card-value">
+                        <span class="currency">$</span><span id="totalRevenue"></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Best Selling SKU</div>
+                    <div class="card-value" id="bestSku"></div>
+                    <div class="card-sub" id="bestSkuQty"></div>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart-box">
+                    <h3>Quantity by SKU</h3>
+                    <canvas id="qtyChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Revenue by SKU</h3>
+                    <canvas id="revChart"></canvas>
+                </div>
+            </div>
+
+            <div class="json-section">
+                <button class="json-toggle" id="jsonToggle">Show JSON Output</button>
+                <pre id="jsonOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
