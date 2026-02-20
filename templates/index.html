@@ -23,10 +23,12 @@
                 <input type="file" id="csvFile" accept=".csv" hidden>
                 <div class="filename" id="fileName"></div>
             </div>
-            <div style="text-align:center;">
+            <div class="btn-wrapper">
                 <button type="submit" class="btn" id="analyzeBtn" disabled>Analyze Orders</button>
             </div>
         </form>
+
+        <div class="error-alert" id="errorAlert"></div>
 
         <div id="results">
             <div class="cards">

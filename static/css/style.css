@@ -83,6 +83,22 @@ h1 {
     cursor: not-allowed;
 }
 
+.btn-wrapper {
+    text-align: center;
+}
+
+/* Error alert */
+.error-alert {
+    display: none;
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: #1e1215;
+    border: 1px solid #991b1b;
+    border-radius: 8px;
+    color: #fca5a5;
+    font-size: 0.9rem;
+}
+
 /* Results */
 #results {
     display: none;
